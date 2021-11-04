@@ -1,20 +1,23 @@
 import React, { useState } from 'react'
 import { Input, InputGroup, InputGroupText, Button, Container } from 'reactstrap'
 import Styled from 'styled-components'
+import {postAddBan} from '../../services/servicesRoutes'
 
-function AddBanForm({ handleSubmit }) {
+function AddBanForm() {
 
-    const [ipNumber, setIpNumber] = useState(
-        {
-            ipNumber: ''
-        }
-    )
+    const [data, setData] = useState()
 
-    // const HandleChange = (index, event) => {
+    const handleSubmit = async (data) => {
 
-    //     const values = [...inputFields]
-    //     values[index][event.target.name] = event.target.value;
-    // }
+        await postAddBan(data)
+        //try, catch, tostify
+
+    }
+
+    const HandleChange = (event) => {
+        const number = event.target.value;
+        setData(() => number)
+    }
 
     return (
 
@@ -24,11 +27,11 @@ function AddBanForm({ handleSubmit }) {
                 <SInput
                     type='text'
                     name='ipNumber'
-                    // value={user.userName}
-                    // onChange={(e) => handleUser(e.target)}
+                    value={data}
+                    onChange={event => HandleChange(event)}
                     placeholder='IP Number' />
                 <SButton
-                    onClick={() => handleSubmit(ipNumber)}
+                    onClick={() => handleSubmit(data)}
                 >Add</SButton>
             </InputGroup>
         </SContainer>

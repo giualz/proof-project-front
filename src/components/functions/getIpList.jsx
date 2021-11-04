@@ -18,14 +18,9 @@ const GetIpList = () => {
                 <tr>
                     <td>IP NUMBER</td>
                 </tr>
-                {/* se stockOrders estiver definida, faz map; caso contrário, nao faz nada
-                {stockOrders?.map(({ stock, orderQuantity, stockPrice, id }, i) => (
+                {/* {stockOrders?.map(({ ipNumber }, i) => (
                     <tr key={i}>
-                        <td>{stock}</td>
-                        <td>{orderQuantity}</td>
-                        <td>{stockPrice}</td>
-                        <td>total</td>
-
+                        <td>{ipNumber}</td>
                     </tr>
                 )
                 )} */}
