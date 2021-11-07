@@ -6,6 +6,7 @@ import {
     NavItem
 } from 'reactstrap';
 
+// application's navbar
 const NavBar = () => (
 
     <SDiv>
@@ -24,9 +25,9 @@ const NavBar = () => (
             </SNavItem>
         </SNav>
     </SDiv>
-)
+);
 
-export default NavBar
+export default NavBar;
 
 const SDiv = Styled.div`
     background-color: white;

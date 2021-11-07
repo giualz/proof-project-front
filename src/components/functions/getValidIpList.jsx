@@ -1,44 +1,49 @@
 import React from 'react';
 import Styled from 'styled-components';
-import {
-    Table,
-    Button
-} from 'reactstrap';
+import { Table } from 'reactstrap';
+import { getBansOutList } from '../../services/servicesRoutes';
 
+//shows all valid IP numbers by using services and the database
+//they are shown without repetition
 const GetValidIpList = () => {
 
-    return (
-        <STable>
-            <thead>
-                <tr>
-                    <th>Valid IPs</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>IP NUMBER</td>
-                </tr>
-                {/* se stockOrders estiver definida, faz map; caso contrário, nao faz nada
-                {stockOrders?.map(({ stock, orderQuantity, stockPrice, id }, i) => (
-                    <tr key={i}>
-                        <td>{stock}</td>
-                        <td>{orderQuantity}</td>
-                        <td>{stockPrice}</td>
-                        <td>total</td>
+    const [validIpList, setValidIpList] = React.useState([]);
 
-                    </tr>
-                )
-                )} */}
-            </tbody>
-        </STable>
+    React.useEffect(() => {
+        getBansOutList().then(result => {
+            setValidIpList(result.data)
+        })
+    }, []);
+
+    return (
+        <Div>
+                {validIpList.map((ipNumber, i) => (
+                    <Ul key={i}>
+                        <Li>{ipNumber}</Li>
+                    </Ul>
+                ))}
+                </Div>
     )
-}
+};
 
 export default GetValidIpList;
 
-const STable = Styled(Table)`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: center;
+const Div = Styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr) ) ;
+`
+
+const Ul = Styled.ul`
+column-fill: balance;
+list-style-type:none;
+text-align: center;
+`
+
+const Li = Styled.li`
+color: #dfdfdf;
+border-top: 1px solid grey;
+border-right: 1px solid grey; 
+border-left: 1px solid grey;
+border-bottom: 1px solid grey;
+padding:10px;
 `

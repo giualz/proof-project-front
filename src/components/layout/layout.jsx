@@ -2,6 +2,7 @@ import HeaderComponent from './header';
 import FooterComponent from './footer';
 import Styled from 'styled-components';
 
+//application's layout
 const Layout = ({ children }) => (
 
     <SContainer>
@@ -13,7 +14,7 @@ const Layout = ({ children }) => (
         </Main>
         <FooterComponent />
     </SContainer>
-)
+);
 
 export default Layout;
 

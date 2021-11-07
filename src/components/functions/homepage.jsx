@@ -1,6 +1,7 @@
 import Styled from "styled-components";
 import { List } from "reactstrap";
 
+//homepage lists what can be done within the application
 const Homepage = () => (
     <Div>
         <h1>What we can do for you</h1>

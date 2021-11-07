@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import NavBar from './navbar';
-import proof from '../../images/proof.png'
+import proof from '../../images/proof.png';
 
+//application's header
 const HeaderComponent = () => (
     <Header>
         <Img src={proof} alt="Logo" />

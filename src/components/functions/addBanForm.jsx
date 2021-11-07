@@ -1,23 +1,21 @@
-import React, { useState } from 'react'
-import { Input, InputGroup, InputGroupText, Button, Container } from 'reactstrap'
-import Styled from 'styled-components'
-import {postAddBan} from '../../services/servicesRoutes'
+import React, { useState } from 'react';
+import { Input, InputGroup, InputGroupText, Button, Container } from 'reactstrap';
+import Styled from 'styled-components';
+import {postAddBan} from '../../services/servicesRoutes';
 
+//input field used to insert an IP number in the database
 function AddBanForm() {
 
-    const [data, setData] = useState()
+    const [data, setData] = useState();
 
     const handleSubmit = async (data) => {
-
         await postAddBan(data)
-        //try, catch, tostify
-
-    }
+    };
 
     const HandleChange = (event) => {
         const number = event.target.value;
         setData(() => number)
-    }
+    };
 
     return (
 
@@ -36,7 +34,7 @@ function AddBanForm() {
             </InputGroup>
         </SContainer>
     )
-}
+};
 
 export default AddBanForm;
 

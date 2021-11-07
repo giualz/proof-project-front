@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+//application's footer
 const FooterComponent = () => (  
     <Footer>
         All rights reserved

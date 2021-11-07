@@ -1,9 +1,10 @@
-import GetValidIpList from "../functions/getValidIpList"
+import GetValidIpList from "../functions/getValidIpList";
 
+//view of the "Valid IP List" page
 const ValidIpList = () => {
     return(
         <GetValidIpList />
     )
-}
+};
 
-export default ValidIpList
+export default ValidIpList;

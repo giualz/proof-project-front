@@ -1,10 +1,11 @@
-import {Router} from '@reach/router'
+import {Router} from '@reach/router';
 import Layout from './components/layout/layout';
 import Home from './components/views/home';
 import FullIpList from './components/views/fullIpList';
 import AddBan from './components/views/addBan';
 import ValidIpList from './components/views/validIpList';
 
+//router
 function Routers() {
     return(
         <Layout>
@@ -16,6 +17,6 @@ function Routers() {
             </Router>
         </Layout>
     )
-}
+};
 
 export default Routers;
