@@ -1,6 +1,5 @@
 import React from 'react';
 import Styled from 'styled-components';
-import { Table } from 'reactstrap';
 import { getBansOutList } from '../../services/servicesRoutes';
 
 //shows all valid IP numbers by using services and the database
@@ -17,12 +16,12 @@ const GetValidIpList = () => {
 
     return (
         <Div>
-                {validIpList.map((ipNumber, i) => (
-                    <Ul key={i}>
-                        <Li>{ipNumber}</Li>
-                    </Ul>
-                ))}
-                </Div>
+            {validIpList.map((ipNumber, i) => (
+                <Ul key={i}>
+                    <Li>{ipNumber}</Li>
+                </Ul>
+            ))}
+        </Div>
     )
 };
 
